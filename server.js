@@ -14,7 +14,7 @@ const database = require('knex')(configuration);
 app.use(cors());
 
 app.get('/', (request, response) => {
-  return response.status(200).json({hello: "world", documentation: "https://github.com/turingschool-examples/favorites-tracker-api"});
+  return response.status(200).json({hello: "world", documentation: "https://github.com/qfarenwald/movie-tracker-db"});
 });
 
 // Login
@@ -85,7 +85,7 @@ function findFavoritesForUser(request, response, tableName) {
 // Add favorite for a user
 app.post('/api/v1/users/:user_id/:favorites_type', findUser, (request, response) => {
   const { user_id, favorites_type } = request.params;
-  
+
   return addFavoriteForUser(request, response, favorites_type, request.body, user_id);
 });
 
