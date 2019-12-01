@@ -13,8 +13,12 @@ const database = require('knex')(configuration);
 // CORS Setup - enable all requests
 app.use(cors());
 
+// app.get('/', (request, response) => {
+//   return response.status(200).json({hello: "world", documentation: "https://github.com/qfarenwald/movie-tracker-db"});
+// });
+
 app.get('/', (request, response) => {
-  return response.status(200).json({hello: "world", documentation: "https://github.com/qfarenwald/movie-tracker-db"});
+  response.send('Hulllllllo');
 });
 
 // Login
